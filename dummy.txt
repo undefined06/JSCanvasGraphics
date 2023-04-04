@@ -1,0 +1,52 @@
+
+  // Draw a rectangle
+  context.beginPath();
+  context.rect(200, 200, 100, 100);
+  context.stroke();
+
+  // Draw a line
+  context.beginPath();
+  context.moveTo(300, 300);
+  context.lineTo(400, 400);
+  context.stroke();
+
+  // Draw a triangle
+  context.beginPath();
+  context.moveTo(500, 500);
+  context.lineTo(600, 600);
+  context.lineTo(500, 600);
+  context.closePath();
+  context.stroke();
+
+  // Draw a text
+  context.font = '30px Arial';
+  context.fillText('Hello World', 700, 500);
+
+  // Draw an image
+  const image = new Image();
+  image.src = 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80';
+  image.onload = function() {
+      context.drawImage(image, 500, 500, 100, 100);
+  }
+
+  // Draw a gradient
+  const gradient = context.createLinearGradient(0, 0, 170, 0);
+  gradient.addColorStop(0, 'magenta');
+  gradient.addColorStop(0.5, 'blue');
+  gradient.addColorStop(1.0, 'red');
+  context.fillStyle = gradient;
+  context.fillRect(900, 500, 100, 100);
+      
+  // Draw a pattern
+  const pattern = context.createPattern(image, 'repeat');
+  context.fillStyle = pattern;
+  context.fillRect(1000, 400, 100, 100);
+
+  // Draw a shadow
+  context.shadowOffsetX = 10;
+  context.shadowOffsetY = 10;
+  context.shadowBlur = 2;
+  context.shadowColor = 'rgba(0, 0, 0, 0.5)';
+  context.font = '20px Times New Roman';
+  context.fillStyle = 'Black';
+  context.fillText('Sample String', 1100, 1100);
